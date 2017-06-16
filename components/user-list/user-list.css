@@ -1,0 +1,30 @@
+
+.userList{
+    list-style-type: none;
+    margin: 0em;
+    padding: 0em;
+}
+.userName {
+    margin: 0em;
+}
+#eachUser {
+    margin:0em;
+    display: block;
+    border: .1em solid black;
+    font-family: Courier New, monospace;
+    padding: 0em;
+    height: 50pt;
+}
+
+.thumbnail{
+    margin: 0em;
+    height: 2em;
+    width: 2em;
+    display: block;
+}
+ .show {
+     display: inline-block;
+ }
+ #eachUser{
+     height: 200%
+ }

@@ -1,0 +1,82 @@
+<input type="file" accept="image/*"  onchange="angular.element(this).scope().inputFileNameChanged(this)">
+
+<div ng-repeat = "eachPhoto in photos">
+    <img ng-src="images/{{eachPhoto.file_name}}" alt="Description" class = "photos{{eachPhoto.file_name}}" name = "photos{{eachPhoto.file_name}}" id ="photos{{eachPhoto.file_name}}"/>
+    <p class = "photoDate">
+    {{eachPhoto.date_time}} {{eachPhoto.file_name}}
+    </p>
+    <md-card>
+    <md-card-content>
+        <p ng-repeat = "eachComment in eachPhoto.comments" class = "photoDetail">
+        {{eachComment.date_time}}
+        <a ng-href="#!/users/{{eachComment.user._id}}">
+            {{eachComment.user.first_name}} {{eachComment.user.last_name}}:
+        </a>
+        {{eachComment.comment}}
+        </p>
+
+        <div style="background-color:white;padding:12px;border-bottom: 1px solid lightgray;">
+            <script type="text/ng-template" id="/tag-mentions.tpl">
+              <!--<md-list flex class="atList"> -->
+              <div class = "atList">
+                <md-button mentio-menu-item="Tag" ng-repeat="Tag in items" ng-click = "printLink()" type="button" class="atListItem">
+                  <span class="text-primary" ng-bind-html="Tag.fullName | mentioHighlight:typedTerm:'menu-highlighted' | unsafe"></span>
+              </div>
+                </div>
+            <!--</md-list-item> -->
+
+            </script>
+        </div>
+        <form name="myForm">
+        <md-input-container>
+            <input type="text" id = "textSlot" mentio-id = "getId(eachPhoto)" ui-tinymce="tinyMceOptions" mentio mentio-typed-text="typedTerm"
+             mentio-require-leading-space="true" placeholder="Write Comment " ng-model = "newObj[eachPhoto.file_name]"  mentio-iframe-element="iframeElement"></textarea>
+
+             <md-button ng-click = 'addNewComment(newObj[eachPhoto.file_name], eachPhoto)' type = "button" >
+                 Submit
+             </md-button>
+
+        </md-input-container>
+             <div style="background-color:white;padding:12px;border-bottom: 1px solid lightgray;">
+                 <mentio-menu id="hastmenu" mentio-for= "getId(eachPhoto)" mentio-trigger-char="'@'"
+                 mentio-items="tags" mentio-template-url="/tag-mentions.tpl" mentio-search="searchTags(term)"
+                 mentio-select="getTagTextRaw(item)"></mentio-menu>
+             </div>
+        </form>
+
+<!--
+        <md-input-container>
+             <input type = "text" placeholder="Write Comment " ng-model = "newComment"> </input>
+             <md-button ng-click = 'addNewComment(newComment, eachPhoto)' type = "button" >
+                 Submit
+             </md-button>
+        </md-input-container>
+-->
+        <div style="background-color:white;padding:12px;border-bottom: 1px solid lightgray;">
+
+        <label class="item item-input"
+               style="padding: 0; margin-right:0; border:0; background-color:transparent">
+       <!--
+
+        <textarea class="jnActionBarNote"
+                  placeholder="Tap to type... @ notifies others"
+                  ng-model="vm.note"
+                  mentio
+                  mentio-typed-term="vm.typedTerm"
+                  mentio-typed-text="vm.typedTerm"
+                  mentio-items="vm.people | filter:label:typedTerm"
+                  mentio-select="vm.test()"
+                  mentio-require-leading-space="true" >
+        </textarea>
+ -->
+        </label>
+        </div>
+        <br>
+        <br>
+
+
+
+    </md-card-content>
+</md-card>
+
+</div>

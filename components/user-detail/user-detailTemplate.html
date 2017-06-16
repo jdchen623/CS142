@@ -1,0 +1,60 @@
+<h1 class = "detailsHeader">
+<md-button ng-href= "#!/photos/{{userId}}"class = "photoLink">
+    PHOTOS
+</md-button>
+</h1>
+
+<!--
+<ul class = "detailList">
+    <li ng-repeat="eachAttribute in user" class = "details">
+        {{eachAttribute}}
+    </li>
+
+</ul>
+-->
+
+<h2>
+    {{user.first_name}} {{user.last_name}} {{user._id}}
+</h2>
+<ul>
+    <li>
+        {{user.location}}
+    </li>
+    <li>
+        {{user.description}}
+    </li>
+    <li>
+        {{user.occupation}}
+    </li>
+    <li>
+        </p> Most Recent </p>
+        <a href = "#!/photos/{{mostRecentPhoto.user_id}}">
+        <img ng-src="images/{{mostRecentPhoto.file_name}}" alt="Description" class = "photos"/>
+        <p> {{mostRecentPhoto.date_time}} </p>
+        </a>
+        <a href = "#!/photos/{{mostCommentsPhoto.user_id}}">
+        <img ng-src="images/{{mostCommentsPhoto.file_name}}" class = "photos" />
+        </a>
+        <md-card>
+            <md-card-content>
+                {{mostCommentsPhoto.login_name}} commented {{nMostComments}} times
+            </md-card-content>
+        </md-card>
+
+
+    </li>
+</ul>
+
+<h3> Tagged Photos of User </h3>
+
+<div ng-repeat = "eachPhoto in mentionsOfUsers">
+    <a href = "#!/photos/{{eachPhoto.user_id}}/#photos{{eachPhoto.file_name}}">
+    <img ng-src="images/{{eachPhoto.file_name}}" ng-href= "#!/users/{{eachPhoto.user_id}}"alt="Description" class = "photos"/>
+    </a>
+    <md-card>
+        <md-card-content>
+            <!--<p ng-href="#!/users/{{eachUser._id}}" > {{getName}} </p> -->
+            <a href="#!/users/{{eachPhoto.user_id}}"> {{eachPhoto.login_name}} </a>
+        </md-card-content>
+    </md-card>
+</div>

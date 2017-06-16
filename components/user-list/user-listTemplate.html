@@ -1,0 +1,14 @@
+<div id = "column">
+    <ul class = "userList">
+        <md-button ng-show= loggedIn ng-href="#!/users/{{eachUser._id}}" ng-repeat="eachUser in users" id = "eachUser">
+            <div class = "userName">{{eachUser.first_name}} {{eachUser.last_name}} </div>
+
+            <div class = "update"> {{eachUser.recentActivity}} </div>
+            <div ng-show = eachUser.updateIsPhoto class = "show">
+                <img ng-src = "{{eachUser.photoFile_name}}" alt="Description" class = "thumbnail"/>
+            </div>
+
+        </md-button>
+    </ul>
+
+</div>

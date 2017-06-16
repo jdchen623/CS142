@@ -1,0 +1,47 @@
+
+
+img {
+    width: 50%;
+    align-items: center;
+    display: block;
+    margin: 1em;
+}
+.photoDate {
+    margin-left: 1em;
+    color:grey;
+
+}
+
+.atList {
+    text-align: center;
+    display:flex list-item;
+    justify-content: center;
+    z-index: 2;
+    border: Dodgerblue;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    padding: 0em;
+    margin: 0em;
+}
+
+.atListItem {
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    display:block;
+    border: Dodgerblue;
+    border-style: solid;
+    border-width: 1px;
+    padding: auto;
+    margin: 0em;
+}
+/*
+.atListItem.active,
+.atListItem.active:focus,
+.atListItem.active:hover {
+    z-index: 1;
+     color: #fff;
+     background-color: white;
+     border-color: #337ab7;
+}

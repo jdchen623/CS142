@@ -1,0 +1,40 @@
+<div class="loginPage">
+    <h1>Login</h1>
+
+    <form ng-submit="submit()">
+        Username
+        <input type="text" ng-model="user_name" name="user_name" />
+        <label>Password </label>
+        <input type="text" ng-model="password" name = "password" />
+        <input type="submit" id="submit" value="Submit" />
+        <md-card ng-show = 'valid'> invalid login </md-card>
+    </form>
+
+    <br>
+
+    <h2> Add New User </h2>
+    <div>
+    <br>
+    <form ng-submit="addNewUser()">
+        New User Name
+        <input type="text" ng-model="newUserName" name="newUserName" />
+        First Name
+        <input type = "text" ng-model="newFirstName" name="newFirstName" />
+        Last Name
+        <input type = "text" ng-model="newLastName" name="newLastName" />
+        Description
+        <input type = "text" ng-model="newDescription" name="newDescription" />
+        Location
+        <input type = "text" ng-model="newLocation" name="newLocation" />
+        New Password
+        <input type = "text" ng-model="newPassword1" name="newPassword1" />
+        New Password
+        <input type="text" ng-model="newPassword2" name = "newPassword2" />
+        <input type = "submit" id="submit" value = "Register Me" />
+    </form>
+
+    <p> {{main.errorMessage}} </p>
+
+    </div>
+
+</div>

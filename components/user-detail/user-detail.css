@@ -1,0 +1,15 @@
+.detailsHeader{
+    text-align: right;
+}
+.detailList{
+    list-style-type: circle;
+    margin-left: .5em;
+}
+.details{
+
+}
+
+
+img{
+    width: 25px;
+}
